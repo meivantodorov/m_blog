@@ -61,21 +61,29 @@ Licence URI: http://www.os-templates.com/template-terms
 
 <!-- ####################################################################################################### -->
 <div class="wrapper">
-  <div class="container">
-	 <form name="submit" action="create_post.php" method="POST">
-
-           <input name="title"
-                 type="text"
-				 value="Title"/>  </br>
-          <input name="category"
-                 type="text"
-				 value="Category"/> </br> </br>
-		  <textarea name="information" rows="4" cols="50">
-			text
-		  </textarea> </br> </br>
-		  <input type="submit" name="create_post_btn" id="btn_post"/>
-      </form>
-  </div>
+	<div class="container">
+		<form name="submit" action="create_post.php" method="POST" enctype="multipart/form-data">
+			<input name="title"
+                   type="text"
+				   value=""/>  </br>
+			<p>
+				Category
+				<select name="category">
+					<?php include 'db.php';
+					$categories[] = '';
+					$result = get_all_categories();
+					while($categories = $result->fetch_assoc()){
+						echo "<option value=".$categories['id'].">". $categories['name']."</option>";
+					}
+					?>
+				</select>
+				<br> <br>
+				<input type="file" name="fileToUpload" id="fileToUpload">
+			</p>  </br> </br>
+	<textarea name="information" rows="4" cols="50"></textarea> </br> </br>
+	<input type="submit" name="create_post_btn" id="btn_post"/>
+		</form>
+	</div>
 </div>
 <!-- ####################################################################################################### -->
 

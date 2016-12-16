@@ -1,9 +1,10 @@
 <?php
 include 'db_connection.php';
 
-function create_new_post($information, $category, $title)
+// ------- Post -------
+function create_new_post($information, $category, $title, $path)
 {
-    $path = "/temp/path_to_img/".$category."/".$title;
+    //$path = "/temp/path_to_img/".$category."/".$title;
     session_start();
     $author = $_SESSION['login_user'];
     $current_date = date("Y/m/d");
@@ -23,13 +24,41 @@ function get_all_posts()
 {
     $result = DB::get()->query(
         "SELECT * FROM posts");
-    // $rows[] = '';
-    //while($rows = $result->fetch_assoc()){
-    //    echo $rows['title'];
-    //}
     return $result;
 }
 
+function get_a_post($id)
+{
+    $result = DB::get()->query(
+        "SELECT * FROM posts WHERE `id` = '$id'");
+    return $result;
+}
+
+// --------- Categories ------
+function create_category($name)
+{
+    $query="INSERT INTO categories (name) VALUES ('"
+          .$name."')";
+
+    $result = DB::get()->query($query);
+    return $result;
+}
+
+function get_all_categories()
+{
+    $result = DB::get()->query(
+        "SELECT * FROM categories");
+     return $result;
+}
+
+function get_a_category($id)
+{
+    $result = DB::get()->query(
+        "SELECT * FROM categories WHERE `id` = '$id'");
+     return $result;
+}
+
+// --------- Users -----------
 function select_user($email)
 {
     $result = DB::get()->query(

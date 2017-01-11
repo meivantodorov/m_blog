@@ -8,6 +8,16 @@ include_once 'validation.php';
 // ================================== //
 
 
+// ------------ Search Selects ---------------
+function select_search($searchText)
+{
+    $query =
+           "SELECT * FROM posts WHERE `title` LIKE '%$searchText' OR
+                                      `information` LIKE '%$searchText'";
+    $result = DB::get()->query($query);
+    return $result;
+}
+
 // ------------ Users Selects ---------------
 
 function select_from_user($c, $w)

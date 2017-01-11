@@ -11,16 +11,17 @@ echo '
                  <li><a href="manage_users.php">Manage Users</a></li>
                </ul>
              </li>
-             <li><a href="admin.php">About</a></li>
+             <li><a href="about.php">About</a></li>
              <li><a href="logout.php">Logout</a></li>
           </ul>
      </div>
     <div id="search">
-      <form action="#" method="post">
+      <form action="search.php" method="post">
         <fieldset>
           <legend>Site Search</legend>
           <input type="text"
-                 value="Search Our Website&hellip;" onfocus="this.value=(this.value=="Search Our Website&hellip;")? "" :
+                 name="search_field"
+                 placeholder="Search Our Website&hellip;" onfocus="this.value=(this.value=="Search Our Website&hellip;")? "" :
                  this.value ;" />
           <input type="submit" name="go" id="go" value="Search" />
         </fieldset>

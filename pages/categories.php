@@ -12,7 +12,6 @@ while($rows = $result->fetch_assoc())
     }
     $id   = $rows['id'];
     $name = $rows['name'];
-    //echo "";
     show_category($class,$rows['name'],$rows['id']);
     $counter++;
 

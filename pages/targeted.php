@@ -22,7 +22,7 @@ while($rows = $result->fetch_assoc())
 {
     print_targeted_posts($rows['id'],
                          $rows['title'],
-                         $rows['information'],
+                         substr($rows['information'], 0, 20),
                          $rows['path']);
 }
 echo '       </ul>

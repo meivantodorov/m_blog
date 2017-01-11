@@ -11,7 +11,7 @@ while($rows = $result->fetch_assoc())
     $title = escape_whitespace($rows['path']);
     print_post($rows['id'],
                $rows['title'],
-               $rows['information'],
+               substr($rows['information'], 0, 20),
                $rows['path']);
 }
 function print_post($id,$title,$information,$path)

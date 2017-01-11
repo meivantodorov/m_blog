@@ -50,13 +50,15 @@ include 'html_init.php';
             if(is_admin($_SESSION['login_user']))
             {
                 echo "<li><a href='delete_post.php?post_id=$post_id&post_path=$post_path'>delete post</a></li>";
+                echo "</br>";
             }
-            echo "<li><a href='#'>$title</a></li>";
-            echo "<li><a href='#'>$information</a></li>";
-            echo "<li><a href='#'>$author</a></li>";
-            echo "<li><a href='#'>$date</a></li>";
+            echo "<h2 style='color:black'>  $title </h2>";
+            echo "<h2 style='color:black'>  $author </h2>";
+            echo "<h2 style='color:black'>  $date </h2>";
+            echo "<h2 style='color:black'>  $information </h2>";
+            echo "<h2 style='color:black'>  ------------------ </h2>";
+            echo "<h2 style='color:black'>  Comment </h2>";
 
-            echo "<li><a href='#'>Comment</a></li>";
             echo '<form name ="submit"
 					action="create_comment.php"
                     method="POST">
@@ -77,10 +79,11 @@ include 'html_init.php';
             $username = get_username_by_email($_SESSION['login_user']);
             $date = $rows['date'];
             $vote = $rows['vote'];
-            echo "<li><a href='#'>----------------------------------------</a></li>";
-            echo "<li><a href='#'>$username</a></li>";
-            echo "<li><a href='#'>$comment</a></li>";
-            echo "<li><a href='#'>$date</a></li>";
+            echo "<h2 style='color:black'> ------------------- </h2>";
+            echo "<h2 style='color:black'>  $username </h2>";
+            echo "<h2 style='color:black'>  $comment </h2>";
+            echo "<h2 style='color:black'>  $date </h2>";
+
             $current_user_id = get_user_id_by_email($_SESSION['login_user']);
             if(!already_voted($current_user_id, $comment_id) AND $post_user_id != $current_user_id)
             {
@@ -90,7 +93,7 @@ include 'html_init.php';
             echo "<li><a href='#'>$vote</a></li>";
             if(is_admin($_SESSION['login_user']))
             {
-                echo "<li><a href='vote.php?delete_comment=$comment_id&post_id=$post_id'>delete post</a></li>";
+                echo "<li><a href='vote.php?delete_comment=$comment_id&post_id=$post_id'>delete comment</a></li>";
             }
 		}
 		?>

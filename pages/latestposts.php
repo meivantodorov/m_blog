@@ -1,9 +1,14 @@
 <?php
-include 'db.php';
-$result = get_all_posts();
+include_once 'db.php';
+include_once "validation.php";
+$result = get_last_posts(2);
 $rows[] = '';
 
-while($rows = $result->fetch_assoc()){
+echo '<h2> Latest posts </h2>';
+
+while($rows = $result->fetch_assoc())
+{
+    $title = escape_whitespace($rows['path']);
     print_post($rows['id'],
                $rows['title'],
                $rows['information'],

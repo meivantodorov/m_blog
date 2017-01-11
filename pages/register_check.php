@@ -13,14 +13,19 @@ if (isset($_POST['register_btn']))
     {
         header("location:register.php");
     }
+    elseif( !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))
+    {
+        header("location:register.php");
+    }
     else
     {
-        include "db.php";
-        $result = register_user($_POST['password'],
-                                $_POST['email'],
-                                $_POST['firstname'],
-                                $_POST['lastname'],
-                                $_POST['address']);
+        include_once "db_helper.php";
+        $result = register_user(
+            mysql_real_escape_string($_POST['password']),
+            mysql_real_escape_string($_POST['email']),
+            mysql_real_escape_string($_POST['firstname']),
+            mysql_real_escape_string($_POST['lastname']),
+            mysql_real_escape_string($_POST['address']));
         if($result)
         {
             header("location:login.php");

@@ -1,14 +1,14 @@
 <?php
 echo'
 	<form name ="submit"
-		  action="login_check.php"
-		  method="POST">
+		  action="log_me_in.php"
+		  method="POST" required>
 	  <input name="email"
              type="text"
-             placeholder="email"/><br/>
+             placeholder="email" required/><br/>
 	  <input name="password"
              type="password"
-             placeholder="password"/><br/>
+             placeholder="password" required /><br/>
 	  <input name="login_btn"
              type="submit"
              value="Submit"/>

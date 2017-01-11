@@ -1,4 +1,11 @@
-<?php include 'html_init.php'; ?>
+<?php
+include 'login_check.php';
+
+if (is_logged())
+{
+    header("location:index.php");
+}
+include 'html_init.php'; ?>
 <body id="top">
         <div class="wrapper">
      <?php include 'page_top.php'; ?>

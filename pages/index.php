@@ -1,20 +1,20 @@
-<?php include 'html_init.php'; ?>
+<?php include_once 'html_init.php'; ?>
 <body id="top">
     <div class="wrapper">
-		<?php include 'page_top.php'; ?>
+		<?php include_once 'page_top.php'; ?>
 	</div>
     <div class="wrapper col2">
 		<?php
-		include 'load_nav_menu.php';
+		include_once 'load_nav_menu.php';
 		?>
 	</div>
 	<!-- ####################################################################################################### -->
 	<div class="wrapper">
 		<div class="container">
-			<?php include 'targeted.php' ;?>
+			<?php include_once 'targeted.php' ;?>
 		</div>
 		<div class="column">
-			<?php include 'latestposts.php'; ?>
+			<?php include_once 'latestposts.php'; ?>
 		</div>
 		<br class="clear" />
 	</div>
@@ -22,16 +22,16 @@
 	<!-- ####################################################################################################### -->
 	<div class="wrapper">
 		<div id="hpage_cats">
-			<?php include 'categories.php'; ?>
+			<?php include_once 'categories.php'; ?>
 		</div>
 	</div>
 	<!-- ####################################################################################################### -->
 	<div class="wrapper">
-		<?php include 'footer.php';?>
+		<?php include_once 'footer.php';?>
 	</div>
 	<!-- ####################################################################################################### -->
 	<div class="wrapper col8">
-		<?php include 'copyright.php'; ?>
+		<?php include_once 'copyright.php'; ?>
 	</div>
 </body>
 </html>

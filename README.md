@@ -14,6 +14,12 @@ Simple web blog site.It is far a way from done.A lot of work must be done !
 ``` json
 	The example database is in /db/world.sql
  ```
+## Admin user
+``` json
+	email    : admin@admin.com
+	password : admin
+ ```
+
 ## Known bugs
 - Search featcher is not working correctly with white spaces in title of the post
 - Search featcher is not working correclty some times when searching into the posts

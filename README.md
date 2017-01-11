@@ -17,6 +17,7 @@ Simple web blog site.It is far a way from done.A lot of work must be done !
 ## Known bugs
 - Search featcher is not working correctly with white spaces in title of the post
 - Search featcher is not working correclty some times when searching into the posts
+- After deleting post the folder containing it has not been deleted
 
 ## TODO
 - Code refactoring
